@@ -5,4 +5,5 @@ edition = "2021"
 
 [dependencies]
 rocket = "0.5.1"
+rocket-multipart-form-data = "0.10.7"
 rocket_dyn_templates = { version = "0.2.0", features = ["tera"] }

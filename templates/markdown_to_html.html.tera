@@ -35,10 +35,11 @@
 
         <div class="col-8" style="margin-left: auto; margin-right: auto;">
 
-            <form class="form-control m-3" action="">
+            <form class="form-control m-3" method="POST" enctype="multipart/form-data"
+                action="/to/html/convert">
                 <div class="mb-3">
                     <label for="file-upload" class="form-label">Upload your Markdown file</label>
-                    <input class="form-control" type="file" id="file-upload" accept=".md">
+                    <input class="form-control" type="file" id="file-upload" accept=".md" name="file-upload" required>
                 </div>
 
                 <div class="mb-3">
