@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate rocket;
 
+use rocket::fs::FileServer;
 use rocket_dyn_templates::{context, Template};
 
 #[get("/")]
@@ -17,5 +18,6 @@ fn rocket() -> _ {
             ..Default::default()
         })
         .mount("/", routes![home])
+        .mount("/static", FileServer::from("./static"))
         .attach(Template::fairing())
 }
