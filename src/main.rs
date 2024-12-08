@@ -5,8 +5,8 @@ use rocket::fs::FileServer;
 use rocket_dyn_templates::{context, Template};
 
 #[get("/")]
-fn home() -> Template {
-    Template::render("home", context! {})
+fn markdown_to_html() -> Template {
+    Template::render("markdown_to_html", context! {})
 }
 
 #[launch]
@@ -17,7 +17,7 @@ fn rocket() -> _ {
             port: 54321,
             ..Default::default()
         })
-        .mount("/", routes![home])
+        .mount("/", routes![markdown_to_html])
         .mount("/static", FileServer::from("./static"))
         .attach(Template::fairing())
 }
