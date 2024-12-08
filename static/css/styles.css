@@ -4,7 +4,19 @@ body {
     font-family: 'Roboto Serif', 'Roboto', Arial, Helvetica, serif;
 }
 
+
+::selection {
+    background: #ffffff;
+        color: black;
+}
+
+
 form.form-control {
     background-color: black;
+    border: none;
+}
+
+
+form.form-control input, form.form-control select {
     border: none;
 }
