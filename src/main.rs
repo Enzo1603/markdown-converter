@@ -1,6 +1,8 @@
 #[macro_use]
 extern crate rocket;
 
+use dotenvy::dotenv;
+
 #[get("/")]
 fn index() -> &'static str {
     "Hello, world!"
@@ -8,5 +10,7 @@ fn index() -> &'static str {
 
 #[launch]
 fn rocket() -> _ {
+    dotenv().ok();
+
     rocket::build().mount("/", routes![index])
 }
