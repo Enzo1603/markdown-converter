@@ -10,7 +10,11 @@ fn index() -> &'static str {
 
 #[launch]
 fn rocket() -> _ {
-    dotenv().ok();
-
-    rocket::build().mount("/", routes![index])
+    rocket::build()
+        .configure(rocket::Config {
+            address: "0.0.0.0".parse().unwrap(),
+            port: 54321,
+            ..Default::default()
+        })
+        .mount("/", routes![index])
 }
