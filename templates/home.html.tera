@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Markdown Converter</title>
+</head>
+
+<body>
+    <h1>Convert your Markdown</h1>
+    <form action="/convert" method="post" enctype="multipart/form-data">
+        <label for="mdfile">Choose Markdown file:</label>
+        <input type="file" id="mdfile" name="mdfile" accept=".md" required><br><br>
+
+        <label for="theme">Select Theme:</label>
+        <select name="theme" id="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="both">Both</option>
+        </select><br><br>
+
+        <button type="submit">Convert</button>
+    </form>
+</body>
+
+</html>

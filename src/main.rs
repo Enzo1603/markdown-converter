@@ -1,9 +1,11 @@
 #[macro_use]
 extern crate rocket;
 
+use rocket_dyn_templates::{context, Template};
+
 #[get("/")]
-fn index() -> &'static str {
-    "Hello, world!"
+fn home() -> Template {
+    Template::render("home", context! {})
 }
 
 #[launch]
@@ -14,5 +16,6 @@ fn rocket() -> _ {
             port: 54321,
             ..Default::default()
         })
-        .mount("/", routes![index])
+        .mount("/", routes![home])
+        .attach(Template::fairing())
 }
